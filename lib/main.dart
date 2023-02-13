@@ -16,6 +16,12 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         brightness: Brightness.dark,
         primarySwatch: Colors.deepPurple,
+        textTheme: const TextTheme(
+          bodySmall: TextStyle(
+            fontSize: 17,
+            color: Color.fromRGBO(240, 238, 237, 1),
+          ),
+        ),
       ),
       home: const MyHomePage(title: "AI Pool 🌊"),
     );
@@ -53,7 +59,9 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.02),
+                  top: MediaQuery.of(context).size.height * 0.08,
+                  bottom: MediaQuery.of(context).size.height * 0.07,
+                ),
                 child: const Text.rich(
                   TextSpan(
                     text:
@@ -67,40 +75,284 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Row(
-                children: const <Widget>[
+                children: <Widget>[
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: Card(
-                        child: Text("hello World"),
-                        color: Colors.red,
+                        child: Column(
+                          children: <Widget>[
+                            const Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "App Name",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 150,
+                              child: Image.network(
+                                "",
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                            const Divider(
+                              color: Color.fromARGB(37, 249, 250, 248),
+                              indent: 30,
+                              endIndent: 30,
+                              thickness: 0.8,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: 4,
+                                left: 10,
+                                right: 10,
+                              ),
+                              child: SizedBox(
+                                width: double.infinity,
+                                child: RichText(
+                                  text: TextSpan(
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall,
+                                    text:
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 10,
+                                  bottom: 10,
+                                ),
+                                child: OutlinedButton(
+                                  onPressed: () {},
+                                  style: OutlinedButton.styleFrom(
+                                    backgroundColor:
+                                        const Color.fromRGBO(240, 238, 237, 1),
+                                    foregroundColor: Colors.black,
+                                  ),
+                                  child: const Text("Visit Website"),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: Card(
-                        child: Text("hello World"),
-                        color: Colors.red,
+                        child: Column(
+                          children: <Widget>[
+                            const Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "App Name",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 150,
+                              child: Image.network(
+                                "",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            const Divider(
+                              color: Color.fromARGB(37, 249, 250, 248),
+                              indent: 30,
+                              endIndent: 30,
+                              thickness: 0.8,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: 4,
+                                left: 10,
+                                right: 10,
+                              ),
+                              child: SizedBox(
+                                width: double.infinity,
+                                child: RichText(
+                                  text: TextSpan(
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall,
+                                    text:
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 10,
+                                  bottom: 10,
+                                ),
+                                child: OutlinedButton(
+                                  onPressed: () {},
+                                  style: OutlinedButton.styleFrom(
+                                    backgroundColor:
+                                        const Color.fromRGBO(240, 238, 237, 1),
+                                    foregroundColor: Colors.black,
+                                  ),
+                                  child: const Text("Visit Website"),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: Card(
-                        child: Text("hello World"),
-                        color: Colors.red,
+                        child: Column(
+                          children: <Widget>[
+                            const Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "App Name",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 150,
+                              child: Image.network(
+                                "",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            const Divider(
+                              color: Color.fromARGB(37, 249, 250, 248),
+                              indent: 30,
+                              endIndent: 30,
+                              thickness: 0.8,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: 4,
+                                left: 10,
+                                right: 10,
+                              ),
+                              child: SizedBox(
+                                width: double.infinity,
+                                child: RichText(
+                                  text: TextSpan(
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall,
+                                    text:
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 10,
+                                  bottom: 10,
+                                ),
+                                child: OutlinedButton(
+                                  onPressed: () {},
+                                  style: OutlinedButton.styleFrom(
+                                    backgroundColor:
+                                        const Color.fromRGBO(240, 238, 237, 1),
+                                    foregroundColor: Colors.black,
+                                  ),
+                                  child: const Text("Visit Website"),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: Card(
-                        child: Text("hello World"),
-                        color: Colors.red,
+                        child: Column(
+                          children: <Widget>[
+                            const Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "App Name",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 150,
+                              child: Image.network(
+                                "",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            const Divider(
+                              color: Color.fromARGB(37, 249, 250, 248),
+                              indent: 30,
+                              endIndent: 30,
+                              thickness: 0.8,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: 4,
+                                left: 10,
+                                right: 10,
+                              ),
+                              child: SizedBox(
+                                width: double.infinity,
+                                child: RichText(
+                                  text: TextSpan(
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall,
+                                    text:
+                                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 10,
+                                  bottom: 10,
+                                ),
+                                child: OutlinedButton(
+                                  onPressed: () {},
+                                  style: OutlinedButton.styleFrom(
+                                    backgroundColor:
+                                        const Color.fromRGBO(240, 238, 237, 1),
+                                    foregroundColor: Colors.black,
+                                  ),
+                                  child: const Text("Visit Website"),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
