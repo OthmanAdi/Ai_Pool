@@ -1,6 +1,15 @@
+import 'package:ai_newsx/appNames.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -37,6 +46,23 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<String> docIDs = [];
+
+  Future getAppNames() async {
+    // path to collection and fetch the Document
+    await FirebaseFirestore.instance
+        .collection("ai_apps")
+        .get()
+        // ignore: avoid_function_literals_in_foreach_calls
+        .then((snapshot) => snapshot.docs.forEach((document) {
+              if (kDebugMode) {
+                print(document.reference);
+                docIDs.add(document.reference.id);
+                print(docIDs[0]);
+              }
+            }));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,14 +108,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Card(
                         child: Column(
                           children: <Widget>[
-                            const Padding(
-                              padding: EdgeInsets.all(10.0),
-                              child: Text(
-                                "App Name",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: FutureBuilder(
+                                future: getAppNames(),
+                                builder: (context, snapshot) {
+                                  return AppNames(documentID: docIDs[1]);
+                                },
                               ),
                             ),
                             SizedBox(
