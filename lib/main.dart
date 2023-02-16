@@ -1,4 +1,7 @@
-import 'package:ai_newsx/appNames.dart';
+import 'package:ai_newsx/CoPilot.dart';
+import 'package:ai_newsx/Dale2.dart';
+import 'package:ai_newsx/Chatgpt';
+import 'package:ai_newsx/LensaAi';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -113,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: FutureBuilder(
                                 future: getAppNames(),
                                 builder: (context, snapshot) {
-                                  return AppNames(documentID: docIDs[1]);
+                                  return CoPilot(documentID: docIDs[0]);
                                 },
                               ),
                             ),
@@ -177,14 +180,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Card(
                         child: Column(
                           children: <Widget>[
-                            const Padding(
-                              padding: EdgeInsets.all(10.0),
-                              child: Text(
-                                "App Name",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: FutureBuilder(
+                                future: getAppNames(),
+                                builder: (context, snapshot) {
+                                  return Dale2(documentID: docIDs[0]);
+                                },
                               ),
                             ),
                             SizedBox(
@@ -247,14 +249,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Card(
                         child: Column(
                           children: <Widget>[
-                            const Padding(
-                              padding: EdgeInsets.all(10.0),
-                              child: Text(
-                                "App Name",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: FutureBuilder(
+                                future: getAppNames(),
+                                builder: (context, snapshot) {
+                                  return Chatgpt(documentID: docIDs[0]);
+                                },
                               ),
                             ),
                             SizedBox(
@@ -317,14 +318,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Card(
                         child: Column(
                           children: <Widget>[
-                            const Padding(
-                              padding: EdgeInsets.all(10.0),
-                              child: Text(
-                                "App Name",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                ),
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: FutureBuilder(
+                                future: getAppNames(),
+                                builder: (context, snapshot) {
+                                  return LensaAi(documentID: docIDs[0]);
+                                },
                               ),
                             ),
                             SizedBox(
