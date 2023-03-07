@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:ai_newsx/CoPilot.dart';
 import 'package:ai_newsx/Dale2.dart';
 import 'package:ai_newsx/Chatgpt.dart';
@@ -6,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_devicon/flutter_devicon.dart';
 import 'firebase_options.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -1124,11 +1127,16 @@ class RowOfApps extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.1,
-                            child: Text(
-                                "Made by: Othman Adi with Flutter and Firebase"),
-                          ),
+                          Row(children: [
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.06,
+                              child: const Text("Flutter/Firebase"),
+                            ),
+                            Container(
+                              // width: MediaQuery.of(context).size.width * 0.1,
+                              child: Text("اللائحه صنعت من: عثمان عدي بمساعده"),
+                            ),
+                          ]),
                           Container(
                             width: MediaQuery.of(context).size.width * 0.1,
                             child: Text("Copyright @ 2023"),
@@ -1140,11 +1148,11 @@ class RowOfApps extends StatelessWidget {
                                 children: <Widget>[
                                   IconButton(
                                     onPressed: () {},
-                                    icon: Icon(Icons.email_rounded),
+                                    icon: Text("LinkedIn"),
                                   ),
                                   IconButton(
                                     onPressed: () {},
-                                    icon: Icon(Icons.email_rounded),
+                                    icon: Text("Github"),
                                   )
                                 ]),
                           )

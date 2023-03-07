@@ -37,6 +37,10 @@ dependencies:
   firebase_core: ^2.5.0
   cloud_firestore: ^4.3.2
   google_fonts: ^4.0.3
+  flutter_devicon: ^1.0.1
+  badges: ^3.0.2
+  url_launcher: ^6.1.10
+  url_launcher_platform_interface: ^2.1.2
 
 dev_dependencies:
   flutter_test:
