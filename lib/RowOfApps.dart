@@ -37,14 +37,20 @@ class RowOfApps extends StatelessWidget {
             top: MediaQuery.of(context).size.height * 0.02,
             bottom: MediaQuery.of(context).size.height * 0.04,
           ),
-          child: const Text.rich(
-            TextSpan(
-              text:
-                  " Enter the new Internet,\n and optimize your life \n with the tools below",
-              style: TextStyle(
-                color: Color.fromRGBO(240, 238, 237, 1),
-                letterSpacing: 8,
-                fontSize: 25,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            alignment: Alignment.topCenter,
+            child: Text.rich(
+              style: GoogleFonts.alexandria(fontStyle: FontStyle.normal),
+              const TextSpan(
+                mouseCursor: SystemMouseCursors.basic,
+                text:
+                    "أنضم للأنترنت الجديد, و أضف أدوات لعملك و هواياتك لحياه أسلس من لائحه الأدوات",
+                style: TextStyle(
+                  color: Color.fromRGBO(240, 238, 237, 1),
+                  // letterSpacing: 8,
+                  fontSize: 45,
+                ),
               ),
             ),
           ),

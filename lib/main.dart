@@ -20,20 +20,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.dark,
-        primarySwatch: Colors.deepPurple,
-        textTheme: const TextTheme(
-          bodySmall: TextStyle(
-            fontSize: 17,
-            color: Color.fromRGBO(240, 238, 237, 1),
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.dark,
+          primarySwatch: Colors.deepPurple,
+          textTheme: const TextTheme(
+            bodySmall: TextStyle(
+              fontSize: 17,
+              color: Color.fromRGBO(240, 238, 237, 1),
+            ),
           ),
         ),
-      ),
-      home: const MyHomePage(title: "AI Pool 🌊"),
-    );
+        home: const Directionality(
+          textDirection: TextDirection.ltr,
+          child: MyHomePage(title: "AI Pool 🌊"),
+        ));
   }
 }
 
