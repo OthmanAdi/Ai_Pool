@@ -53,12 +53,11 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyArgOGcnvBvnTuczf0f0w8UPzWMuJB03Rw',
-    appId: '1:883868188783:web:6ed9212492a4ff40988d9a',
-    messagingSenderId: '883868188783',
-    projectId: 'ai-pool',
-    authDomain: 'ai-pool.firebaseapp.com',
-    storageBucket: 'ai-pool.appspot.com',
-    measurementId: 'G-V12EJM3HFJ',
-  );
+      apiKey: "AIzaSyArgOGcnvBvnTuczf0f0w8UPzWMuJB03Rw",
+      authDomain: "ai-pool.firebaseapp.com",
+      projectId: "ai-pool",
+      storageBucket: "ai-pool.appspot.com",
+      messagingSenderId: "883868188783",
+      appId: "1:883868188783:web:6ed9212492a4ff40988d9a",
+      measurementId: "G-V12EJM3HFJ");
 }

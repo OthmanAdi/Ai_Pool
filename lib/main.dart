@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -10,6 +11,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
+
   runApp(const MyApp());
 }
 
@@ -23,7 +26,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           useMaterial3: true,
-          brightness: Brightness.dark,
+          brightness: Brightness.light,
           primarySwatch: Colors.deepPurple,
           textTheme: const TextTheme(
             bodySmall: TextStyle(
@@ -48,23 +51,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<String> docIDs = [];
-
-  Future getAppNames() async {
-    // path to collection and fetch the Document
-    await FirebaseFirestore.instance
-        .collection("ai_apps")
-        .get()
-        // ignore: avoid_function_literals_in_foreach_calls
-        .then((snapshot) => snapshot.docs.forEach((document) {
-              if (kDebugMode) {
-                print(document.reference);
-                docIDs.add(document.reference.id);
-                print(docIDs[0]);
-              }
-            }));
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

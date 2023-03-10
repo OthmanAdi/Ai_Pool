@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "883868188783",
+    "project_id": "ai-pool",
+    "storage_bucket": "ai-pool.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883868188783:android:01dd9392adbbe968988d9a",
+        "android_client_info": {
+          "package_name": "com.example.ai_newsx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883868188783-0ami6mg44itvrpuumvcej7u95lm6oe7q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxJIeUbHGTPYbjD6oM_y_YWTD9du6ck9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883868188783-0ami6mg44itvrpuumvcej7u95lm6oe7q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

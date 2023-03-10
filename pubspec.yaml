@@ -41,6 +41,7 @@ dependencies:
   badges: ^3.0.2
   url_launcher: ^6.1.10
   url_launcher_platform_interface: ^2.1.2
+  firebase_crashlytics: ^3.0.16
 
 dev_dependencies:
   flutter_test:

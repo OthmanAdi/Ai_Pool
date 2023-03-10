@@ -13,25 +13,39 @@ import 'firebase_options.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RowOfApps extends StatelessWidget {
-  List<String> docIDs = [];
+  const RowOfApps({super.key});
 
-  Future getAppNames() async {
-    // path to collection and fetch the Document
-    await FirebaseFirestore.instance
-        .collection("ai_apps")
-        .get()
-        // ignore: avoid_function_literals_in_foreach_calls
-        .then((snapshot) => snapshot.docs.forEach((document) {
-              if (kDebugMode) {
-                print(document.reference);
-                docIDs.add(document.reference.id);
-                print(docIDs[0]);
-              }
-            }));
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: AiAppsRows(),
+    );
+  }
+}
+
+class AiAppsRows extends StatefulWidget {
+  @override
+  _AiAppsRowsState createState() => _AiAppsRowsState();
+}
+
+class _AiAppsRowsState extends State<AiAppsRows> {
+//add late to tell the IDE that this will be used soon
+  late Stream<QuerySnapshot> streamOfData;
+
+  CollectionReference _dBRef = FirebaseFirestore.instance.collection('ai_apps');
+
+  void initState() {
+    super.initState();
+    streamOfData = _dBRef.snapshots();
   }
 
   @override
   Widget build(BuildContext context) {
+    _dBRef.get(); //cant listen to update and return future
+    _dBRef.snapshots(); //can listen to updates and return a stream
+
+    CollectionReference ref = FirebaseFirestore.instance.collection('ai_apps');
+
     return Scaffold(
       body: SingleChildScrollView(
           child: Column(children: [
@@ -58,6 +72,243 @@ class RowOfApps extends StatelessWidget {
             ),
           ),
         ),
+        StreamBuilder(
+            stream: streamOfData,
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.hasError == true) {
+                return Center(child: Text(snapshot.error.toString()));
+              }
+              // if (snapshot.connectionState == ConnectionState.active) {
+              //   QuerySnapshot querySnapshot = snapshot.data;
+              //   return Text(querySnapshot.docs.first.data().toString());
+              // }
+              if (snapshot.connectionState == ConnectionState.active) {
+                QuerySnapshot querySnapshot = snapshot.data;
+                return Row(children: <Widget>[
+                  Expanded(
+                      child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Card(
+                              child: Column(children: <Widget>[
+                            Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(querySnapshot.docs[0]
+                                    .get('Chatgpt')
+                                    .toString())),
+                            SizedBox(
+                              height: 150,
+                              child: Image.network(
+                                "",
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                            const Divider(
+                              color: Color.fromARGB(37, 249, 250, 248),
+                              indent: 30,
+                              endIndent: 30,
+                              thickness: 0.8,
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 4,
+                                  left: 10,
+                                  right: 10,
+                                ),
+                                child: SizedBox(
+                                    width: double.infinity,
+                                    child: RichText(
+                                        text: TextSpan(
+                                      style:
+                                          Theme.of(context).textTheme.bodySmall,
+                                      text:
+                                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                    )))),
+                            Align(
+                                alignment: Alignment.center,
+                                child: Padding(
+                                    padding: const EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                    ),
+                                    child: OutlinedButton(
+                                      onPressed: () {},
+                                      style: OutlinedButton.styleFrom(
+                                        backgroundColor: const Color.fromRGBO(
+                                            240, 238, 237, 1),
+                                        foregroundColor: Colors.black,
+                                      ),
+                                      child: const Text("Visit Website"),
+                                    )))
+                          ])))),
+                  Expanded(
+                      child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Card(
+                              child: Column(children: <Widget>[
+                            Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(querySnapshot.docs[0]
+                                    .get('CoPilot')
+                                    .toString())),
+                            SizedBox(
+                              height: 150,
+                              child: Image.network(
+                                "",
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                            const Divider(
+                              color: Color.fromARGB(37, 249, 250, 248),
+                              indent: 30,
+                              endIndent: 30,
+                              thickness: 0.8,
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 4,
+                                  left: 10,
+                                  right: 10,
+                                ),
+                                child: SizedBox(
+                                    width: double.infinity,
+                                    child: RichText(
+                                        text: TextSpan(
+                                      style:
+                                          Theme.of(context).textTheme.bodySmall,
+                                      text:
+                                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                    )))),
+                            Align(
+                                alignment: Alignment.center,
+                                child: Padding(
+                                    padding: const EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                    ),
+                                    child: OutlinedButton(
+                                      onPressed: () {},
+                                      style: OutlinedButton.styleFrom(
+                                        backgroundColor: const Color.fromRGBO(
+                                            240, 238, 237, 1),
+                                        foregroundColor: Colors.black,
+                                      ),
+                                      child: const Text("Visit Website"),
+                                    )))
+                          ])))),
+                  Expanded(
+                      child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Card(
+                              child: Column(children: <Widget>[
+                            Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(querySnapshot.docs[0]
+                                    .get('Lensa')
+                                    .toString())),
+                            SizedBox(
+                              height: 150,
+                              child: Image.network(
+                                "",
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                            const Divider(
+                              color: Color.fromARGB(37, 249, 250, 248),
+                              indent: 30,
+                              endIndent: 30,
+                              thickness: 0.8,
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 4,
+                                  left: 10,
+                                  right: 10,
+                                ),
+                                child: SizedBox(
+                                    width: double.infinity,
+                                    child: RichText(
+                                        text: TextSpan(
+                                      style:
+                                          Theme.of(context).textTheme.bodySmall,
+                                      text:
+                                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                    )))),
+                            Align(
+                                alignment: Alignment.center,
+                                child: Padding(
+                                    padding: const EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                    ),
+                                    child: OutlinedButton(
+                                      onPressed: () {},
+                                      style: OutlinedButton.styleFrom(
+                                        backgroundColor: const Color.fromRGBO(
+                                            240, 238, 237, 1),
+                                        foregroundColor: Colors.black,
+                                      ),
+                                      child: const Text("Visit Website"),
+                                    )))
+                          ])))),
+                  Expanded(
+                      child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Card(
+                              child: Column(children: <Widget>[
+                            Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(querySnapshot.docs[0]
+                                    .get('Dale2')
+                                    .toString())),
+                            SizedBox(
+                              height: 150,
+                              child: Image.network(
+                                "",
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                            const Divider(
+                              color: Color.fromARGB(37, 249, 250, 248),
+                              indent: 30,
+                              endIndent: 30,
+                              thickness: 0.8,
+                            ),
+                            Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 4,
+                                  left: 10,
+                                  right: 10,
+                                ),
+                                child: SizedBox(
+                                    width: double.infinity,
+                                    child: RichText(
+                                        text: TextSpan(
+                                      style:
+                                          Theme.of(context).textTheme.bodySmall,
+                                      text:
+                                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                    )))),
+                            Align(
+                                alignment: Alignment.center,
+                                child: Padding(
+                                    padding: const EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                    ),
+                                    child: OutlinedButton(
+                                      onPressed: () {},
+                                      style: OutlinedButton.styleFrom(
+                                        backgroundColor: const Color.fromRGBO(
+                                            240, 238, 237, 1),
+                                        foregroundColor: Colors.black,
+                                      ),
+                                      child: const Text("Visit Website"),
+                                    )))
+                          ]))))
+                ]);
+              }
+              return const Center(child: CircularProgressIndicator());
+            }),
         SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Container(
