@@ -8,7 +8,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_devicon/flutter_devicon.dart';
 import 'firebase_options.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -34,6 +33,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
 
   CollectionReference _dBRef = FirebaseFirestore.instance.collection('ai_apps');
 
+  @override
   void initState() {
     super.initState();
     streamOfData = _dBRef.snapshots();
