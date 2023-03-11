@@ -1,11 +1,15 @@
 import 'dart:io';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firebase_options.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+
+import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class RowOfApps extends StatelessWidget {
   const RowOfApps({super.key});
@@ -131,7 +135,15 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                             bottom: 10,
                                           ),
                                           child: OutlinedButton(
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              const gptLink =
+                                                  "https://openai.com/product";
+                                              if (await canLaunch(gptLink)) {
+                                                await launch(gptLink);
+                                              } else {
+                                                throw 'Could not launch $gptLink';
+                                              }
+                                            },
                                             style: OutlinedButton.styleFrom(
                                               backgroundColor:
                                                   const Color.fromRGBO(
@@ -188,7 +200,14 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                             bottom: 10,
                                           ),
                                           child: OutlinedButton(
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              const link = "";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
                                             style: OutlinedButton.styleFrom(
                                               backgroundColor:
                                                   const Color.fromRGBO(
@@ -245,7 +264,14 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                             bottom: 10,
                                           ),
                                           child: OutlinedButton(
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              const link = "";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
                                             style: OutlinedButton.styleFrom(
                                               backgroundColor:
                                                   const Color.fromRGBO(
@@ -302,7 +328,14 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                             bottom: 10,
                                           ),
                                           child: OutlinedButton(
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              const link = "";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
                                             style: OutlinedButton.styleFrom(
                                               backgroundColor:
                                                   const Color.fromRGBO(
@@ -361,7 +394,14 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                             bottom: 10,
                                           ),
                                           child: OutlinedButton(
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              const link = "";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
                                             style: OutlinedButton.styleFrom(
                                               backgroundColor:
                                                   const Color.fromRGBO(
@@ -418,7 +458,14 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                             bottom: 10,
                                           ),
                                           child: OutlinedButton(
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              const link = "";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
                                             style: OutlinedButton.styleFrom(
                                               backgroundColor:
                                                   const Color.fromRGBO(
@@ -475,7 +522,14 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                             bottom: 10,
                                           ),
                                           child: OutlinedButton(
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              const link = "";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
                                             style: OutlinedButton.styleFrom(
                                               backgroundColor:
                                                   const Color.fromRGBO(
@@ -532,7 +586,14 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                             bottom: 10,
                                           ),
                                           child: OutlinedButton(
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              const link = "";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
                                             style: OutlinedButton.styleFrom(
                                               backgroundColor:
                                                   const Color.fromRGBO(
@@ -591,7 +652,14 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                             bottom: 10,
                                           ),
                                           child: OutlinedButton(
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              const link = "";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
                                             style: OutlinedButton.styleFrom(
                                               backgroundColor:
                                                   const Color.fromRGBO(
@@ -648,7 +716,14 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                             bottom: 10,
                                           ),
                                           child: OutlinedButton(
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              const link = "";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
                                             style: OutlinedButton.styleFrom(
                                               backgroundColor:
                                                   const Color.fromRGBO(
@@ -705,7 +780,14 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                             bottom: 10,
                                           ),
                                           child: OutlinedButton(
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              const link = "";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
                                             style: OutlinedButton.styleFrom(
                                               backgroundColor:
                                                   const Color.fromRGBO(
@@ -762,7 +844,14 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                             bottom: 10,
                                           ),
                                           child: OutlinedButton(
-                                            onPressed: () {},
+                                            onPressed: () async {
+                                              const link = "";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
                                             style: OutlinedButton.styleFrom(
                                               backgroundColor:
                                                   const Color.fromRGBO(
@@ -810,14 +899,30 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                     MainAxisAlignment.spaceEvenly,
                                 children: <Widget>[
                                   TextButton(
-                                    onPressed: () {},
+                                    onPressed: () async {
+                                      const linkedIn =
+                                          "https://www.linkedin.com/in/codingwithadi/";
+                                      if (await canLaunch(linkedIn)) {
+                                        await launch(linkedIn);
+                                      } else {
+                                        throw 'Could not launch $linkedIn';
+                                      }
+                                    },
                                     child: const Text(
                                       "LinkedIn",
                                       style: TextStyle(color: Colors.black),
                                     ),
                                   ),
                                   TextButton(
-                                    onPressed: () {},
+                                    onPressed: () async {
+                                      const githubUrl =
+                                          "https://github.com/OthmanAdi";
+                                      if (await canLaunch(githubUrl)) {
+                                        await launch(githubUrl);
+                                      } else {
+                                        throw 'Could not launch $githubUrl';
+                                      }
+                                    },
                                     child: const Text("Github",
                                         style: TextStyle(color: Colors.black)),
                                   )
