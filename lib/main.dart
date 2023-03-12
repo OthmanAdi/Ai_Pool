@@ -30,8 +30,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
             useMaterial3: true,
-            brightness: Brightness.light,
-            primarySwatch: Colors.deepPurple,
+            brightness: Brightness.dark,
             textTheme: const TextTheme(
               bodySmall: TextStyle(
                 fontSize: 15,

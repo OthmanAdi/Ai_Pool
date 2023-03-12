@@ -33,7 +33,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
 //add late to tell the IDE that this will be used soon
   late Stream<QuerySnapshot> streamOfData;
 
-  CollectionReference _dBRef = FirebaseFirestore.instance.collection('ai_apps');
+  final CollectionReference _dBRef =
+      FirebaseFirestore.instance.collection('ai_apps');
 
   @override
   void initState() {
@@ -52,11 +53,13 @@ class _AiAppsRowsState extends State<AiAppsRows> {
         Padding(
           padding: EdgeInsets.only(
             top: MediaQuery.of(context).size.height * 0.02,
+            left: MediaQuery.of(context).size.width * 0.02,
+            right: MediaQuery.of(context).size.width * 0.02,
             bottom: MediaQuery.of(context).size.height * 0.04,
           ),
           child: Container(
             width: MediaQuery.of(context).size.width,
-            alignment: Alignment.topCenter,
+            alignment: Alignment.center,
             child: Text.rich(
               style: GoogleFonts.alexandria(fontStyle: FontStyle.normal),
               const TextSpan(
@@ -85,7 +88,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
               if (snapshot.connectionState == ConnectionState.active) {
                 QuerySnapshot querySnapshot = snapshot.data;
                 return Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    // mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Row(children: <Widget>[
                         Expanded(
@@ -1138,72 +1141,79 @@ class _AiAppsRowsState extends State<AiAppsRows> {
               }
               return const Center(child: CircularProgressIndicator());
             }),
-        SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: Container(
-                width: double.infinity,
-                alignment: Alignment.topCenter,
-                child: Column(children: <Widget>[
-                  Container(
-                      height: MediaQuery.of(context).size.height * 0.1,
-                      width: double.infinity,
-                      color: Colors.blue,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          Row(children: [
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(DevIcons.flutterPlain)),
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(DevIcons.firebasePlain)),
-                            const Text("اللائحه صنعت من: عثمان عدي بمساعده"),
-                          ]),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.3,
-                            child: Text("Copyright @ 2023"),
-                          ),
-                          SizedBox(
-                            child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: <Widget>[
-                                  IconButton(
-                                      onPressed: () async {
-                                        const linkedIn =
-                                            "https://www.linkedin.com/in/codingwithadi/";
-                                        if (await canLaunch(linkedIn)) {
-                                          await launch(linkedIn);
-                                        } else {
-                                          throw 'Could not launch $linkedIn';
-                                        }
-                                      },
-                                      icon: Icon(DevIcons.linkedinPlain)
-                                      // icon: const Text(
-                                      //   "LinkedIn",
-                                      //   style: TextStyle(color: Colors.black),
-                                      // ),
-                                      ),
-                                  IconButton(
-                                      onPressed: () async {
-                                        const githubUrl =
-                                            "https://github.com/OthmanAdi";
-                                        if (await canLaunch(githubUrl)) {
-                                          await launch(githubUrl);
-                                        } else {
-                                          throw 'Could not launch $githubUrl';
-                                        }
-                                      },
-                                      icon: Icon(DevIcons.githubOriginal)
-                                      //   icon: const Text("Github",
-                                      //       style: TextStyle(color: Colors.black)),
-                                      )
-                                ]),
-                          )
-                        ],
-                      )),
-                ])))
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: Container(
+                    width: double.infinity,
+                    // alignment: Alignment.topCenter,
+                    child: Column(children: <Widget>[
+                      Container(
+                          height: MediaQuery.of(context).size.height * 0.1,
+                          width: double.infinity,
+                          color: Colors.blue,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Row(children: [
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(DevIcons.flutterPlain)),
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(DevIcons.firebasePlain)),
+                                const Text(
+                                    "اللائحه صنعت من: عثمان عدي بمساعده"),
+                              ]),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.3,
+                                child: Text("Copyright @ 2023"),
+                              ),
+                              SizedBox(
+                                child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      IconButton(
+                                          onPressed: () async {
+                                            const linkedIn =
+                                                "https://www.linkedin.com/in/codingwithadi/";
+                                            if (await canLaunch(linkedIn)) {
+                                              await launch(linkedIn);
+                                            } else {
+                                              throw 'Could not launch $linkedIn';
+                                            }
+                                          },
+                                          icon: Icon(DevIcons.linkedinPlain)
+                                          // icon: const Text(
+                                          //   "LinkedIn",
+                                          //   style: TextStyle(color: Colors.black),
+                                          // ),
+                                          ),
+                                      IconButton(
+                                          onPressed: () async {
+                                            const githubUrl =
+                                                "https://github.com/OthmanAdi";
+                                            if (await canLaunch(githubUrl)) {
+                                              await launch(githubUrl);
+                                            } else {
+                                              throw 'Could not launch $githubUrl';
+                                            }
+                                          },
+                                          icon: Icon(DevIcons.githubOriginal)
+                                          //   icon: const Text("Github",
+                                          //       style: TextStyle(color: Colors.black)),
+                                          )
+                                    ]),
+                              )
+                            ],
+                          )),
+                    ])))
+          ],
+        )
       ])),
     );
   }
