@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:ai_newsx/RowOfApps.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Color.fromARGB(51, 0, 0, 0),
         title: GestureDetector(
           child: Text(widget.title),
-          onTap: () => Navigator.pop(context), //Go back home on Tap
+          onTap: () => window.location.reload(), //Reload page when tapped
         ),
       ),
       body: RowOfApps(),
