@@ -98,11 +98,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('Chatgpt')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -163,11 +163,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('CoPilot')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -228,11 +228,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('Lensa')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -293,11 +293,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('Dale2')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -360,11 +360,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('tool5')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -425,11 +425,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('tool6')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -490,11 +490,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('tool7')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -555,11 +555,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('tool8')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -622,11 +622,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('tool5')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -686,11 +686,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('tool6')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -751,11 +751,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('tool7')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -816,11 +816,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('tool8')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -883,11 +883,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('tool5')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -948,11 +948,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('tool6')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -1013,11 +1013,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('tool7')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
@@ -1078,11 +1078,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                       child: Text(querySnapshot.docs[0]
                                           .get('tool8')
                                           .toString())),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 150,
-                                    child: Image.network(
-                                      "",
-                                      fit: BoxFit.contain,
+                                    child: Image(
+                                      image: AssetImage("../asset/"),
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                   const Divider(
