@@ -11,6 +11,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'package:dev_icons/dev_icons.dart';
+
 class RowOfApps extends StatelessWidget {
   const RowOfApps({super.key});
 
@@ -44,7 +46,6 @@ class _AiAppsRowsState extends State<AiAppsRows> {
     _dBRef.get(); //cant listen to update and return future
     _dBRef.snapshots(); //can listen to updates and return a stream
 
-
     return Scaffold(
       body: SingleChildScrollView(
           child: Column(children: [
@@ -63,7 +64,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                 text:
                     "أنضم للأنترنت الجديد, و أضف أدوات لعملك و هواياتك لحياه أسلس من لائحه الأدوات",
                 style: TextStyle(
-                  color: Color.fromRGBO(240, 238, 237, 1),
+                  color: Color.fromRGBO(70, 69, 69, 1),
                   // letterSpacing: 8,
                   fontSize: 45,
                 ),
@@ -879,52 +880,53 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           Row(children: [
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.06,
-                              child: const Text("Flutter/Firebase"),
-                            ),
-                            Container(
-                              // width: MediaQuery.of(context).size.width * 0.1,
-                              child: Text("اللائحه صنعت من: عثمان عدي بمساعده"),
-                            ),
+                            IconButton(
+                                onPressed: () {},
+                                icon: const Icon(DevIcons.flutterPlain)),
+                            IconButton(
+                                onPressed: () {},
+                                icon: const Icon(DevIcons.firebasePlain)),
+                            const Text("اللائحه صنعت من: عثمان عدي بمساعده"),
                           ]),
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width * 0.3,
                             child: Text("Copyright @ 2023"),
                           ),
-                          Container(
+                          SizedBox(
                             child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: <Widget>[
-                                  TextButton(
-                                    onPressed: () async {
-                                      const linkedIn =
-                                          "https://www.linkedin.com/in/codingwithadi/";
-                                      if (await canLaunch(linkedIn)) {
-                                        await launch(linkedIn);
-                                      } else {
-                                        throw 'Could not launch $linkedIn';
-                                      }
-                                    },
-                                    child: const Text(
-                                      "LinkedIn",
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                  ),
-                                  TextButton(
-                                    onPressed: () async {
-                                      const githubUrl =
-                                          "https://github.com/OthmanAdi";
-                                      if (await canLaunch(githubUrl)) {
-                                        await launch(githubUrl);
-                                      } else {
-                                        throw 'Could not launch $githubUrl';
-                                      }
-                                    },
-                                    child: const Text("Github",
-                                        style: TextStyle(color: Colors.black)),
-                                  )
+                                  IconButton(
+                                      onPressed: () async {
+                                        const linkedIn =
+                                            "https://www.linkedin.com/in/codingwithadi/";
+                                        if (await canLaunch(linkedIn)) {
+                                          await launch(linkedIn);
+                                        } else {
+                                          throw 'Could not launch $linkedIn';
+                                        }
+                                      },
+                                      icon: Icon(DevIcons.linkedinPlain)
+                                      // icon: const Text(
+                                      //   "LinkedIn",
+                                      //   style: TextStyle(color: Colors.black),
+                                      // ),
+                                      ),
+                                  IconButton(
+                                      onPressed: () async {
+                                        const githubUrl =
+                                            "https://github.com/OthmanAdi";
+                                        if (await canLaunch(githubUrl)) {
+                                          await launch(githubUrl);
+                                        } else {
+                                          throw 'Could not launch $githubUrl';
+                                        }
+                                      },
+                                      icon: Icon(DevIcons.githubOriginal)
+                                      //   icon: const Text("Github",
+                                      //       style: TextStyle(color: Colors.black)),
+                                      )
                                 ]),
                           )
                         ],
