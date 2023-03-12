@@ -137,7 +137,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           child: OutlinedButton(
                                             onPressed: () async {
                                               const gptLink =
-                                                  "https://openai.com/product";
+                                                  "https://openai.com/";
                                               if (await canLaunch(gptLink)) {
                                                 await launch(gptLink);
                                               } else {
@@ -201,7 +201,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           ),
                                           child: OutlinedButton(
                                             onPressed: () async {
-                                              const link = "";
+                                              const link =
+                                                  "https://github.com/features/copilot";
                                               if (await canLaunch(link)) {
                                                 await launch(link);
                                               } else {
@@ -265,7 +266,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           ),
                                           child: OutlinedButton(
                                             onPressed: () async {
-                                              const link = "";
+                                              const link =
+                                                  "https://prisma-ai.com/lensa";
                                               if (await canLaunch(link)) {
                                                 await launch(link);
                                               } else {
@@ -329,7 +331,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           ),
                                           child: OutlinedButton(
                                             onPressed: () async {
-                                              const link = "";
+                                              const link =
+                                                  "https://openai.com/product/dall-e-2";
                                               if (await canLaunch(link)) {
                                                 await launch(link);
                                               } else {
@@ -395,7 +398,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           ),
                                           child: OutlinedButton(
                                             onPressed: () async {
-                                              const link = "";
+                                              const link =
+                                                  "https://www.kdnuggets.com/2023/01/learn-machine-learning-github-repositories.html";
                                               if (await canLaunch(link)) {
                                                 await launch(link);
                                               } else {
@@ -459,7 +463,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           ),
                                           child: OutlinedButton(
                                             onPressed: () async {
-                                              const link = "";
+                                              const link =
+                                                  "https://www.promptpal.net/?ref=aitools.fyi";
                                               if (await canLaunch(link)) {
                                                 await launch(link);
                                               } else {
@@ -523,7 +528,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           ),
                                           child: OutlinedButton(
                                             onPressed: () async {
-                                              const link = "";
+                                              const link =
+                                                  "https://fliki.ai/?via=aitools-fyi";
                                               if (await canLaunch(link)) {
                                                 await launch(link);
                                               } else {
@@ -587,7 +593,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           ),
                                           child: OutlinedButton(
                                             onPressed: () async {
-                                              const link = "";
+                                              const link =
+                                                  "https://kajabi.com/aicreatorhub";
                                               if (await canLaunch(link)) {
                                                 await launch(link);
                                               } else {
@@ -653,7 +660,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           ),
                                           child: OutlinedButton(
                                             onPressed: () async {
-                                              const link = "";
+                                              const link = "https://krisp.ai/";
                                               if (await canLaunch(link)) {
                                                 await launch(link);
                                               } else {
@@ -717,7 +724,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           ),
                                           child: OutlinedButton(
                                             onPressed: () async {
-                                              const link = "";
+                                              const link =
+                                                  "https://www.ocoya.com/";
                                               if (await canLaunch(link)) {
                                                 await launch(link);
                                               } else {
@@ -781,7 +789,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           ),
                                           child: OutlinedButton(
                                             onPressed: () async {
-                                              const link = "";
+                                              const link =
+                                                  "https://www.copy.ai/";
                                               if (await canLaunch(link)) {
                                                 await launch(link);
                                               } else {
@@ -845,7 +854,270 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           ),
                                           child: OutlinedButton(
                                             onPressed: () async {
-                                              const link = "";
+                                              const link =
+                                                  "https://www.beatoven.ai/";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
+                                            style: OutlinedButton.styleFrom(
+                                              backgroundColor:
+                                                  const Color.fromRGBO(
+                                                      240, 238, 237, 1),
+                                              foregroundColor: Colors.black,
+                                            ),
+                                            child: const Text("Visit Website"),
+                                          )))
+                                ]))))
+                      ]),
+                      Row(children: <Widget>[
+                        Expanded(
+                            child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Card(
+                                    child: Column(children: <Widget>[
+                                  Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Text(querySnapshot.docs[0]
+                                          .get('tool5')
+                                          .toString())),
+                                  SizedBox(
+                                    height: 150,
+                                    child: Image.network(
+                                      "",
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  const Divider(
+                                    color: Color.fromARGB(37, 249, 250, 248),
+                                    indent: 30,
+                                    endIndent: 30,
+                                    thickness: 0.8,
+                                  ),
+                                  Padding(
+                                      padding: const EdgeInsets.only(
+                                        top: 4,
+                                        left: 10,
+                                        right: 10,
+                                      ),
+                                      child: SizedBox(
+                                          width: double.infinity,
+                                          child: RichText(
+                                              text: TextSpan(
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall,
+                                            text:
+                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                          )))),
+                                  Align(
+                                      alignment: Alignment.center,
+                                      child: Padding(
+                                          padding: const EdgeInsets.only(
+                                            top: 10,
+                                            bottom: 10,
+                                          ),
+                                          child: OutlinedButton(
+                                            onPressed: () async {
+                                              const link =
+                                                  "https://gptzero.me/";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
+                                            style: OutlinedButton.styleFrom(
+                                              backgroundColor:
+                                                  const Color.fromRGBO(
+                                                      240, 238, 237, 1),
+                                              foregroundColor: Colors.black,
+                                            ),
+                                            child: const Text("Visit Website"),
+                                          )))
+                                ])))),
+                        Expanded(
+                            child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Card(
+                                    child: Column(children: <Widget>[
+                                  Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Text(querySnapshot.docs[0]
+                                          .get('tool6')
+                                          .toString())),
+                                  SizedBox(
+                                    height: 150,
+                                    child: Image.network(
+                                      "",
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  const Divider(
+                                    color: Color.fromARGB(37, 249, 250, 248),
+                                    indent: 30,
+                                    endIndent: 30,
+                                    thickness: 0.8,
+                                  ),
+                                  Padding(
+                                      padding: const EdgeInsets.only(
+                                        top: 4,
+                                        left: 10,
+                                        right: 10,
+                                      ),
+                                      child: SizedBox(
+                                          width: double.infinity,
+                                          child: RichText(
+                                              text: TextSpan(
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall,
+                                            text:
+                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                          )))),
+                                  Align(
+                                      alignment: Alignment.center,
+                                      child: Padding(
+                                          padding: const EdgeInsets.only(
+                                            top: 10,
+                                            bottom: 10,
+                                          ),
+                                          child: OutlinedButton(
+                                            onPressed: () async {
+                                              const link =
+                                                  "https://openai-openai-detector.hf.space/";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
+                                            style: OutlinedButton.styleFrom(
+                                              backgroundColor:
+                                                  const Color.fromRGBO(
+                                                      240, 238, 237, 1),
+                                              foregroundColor: Colors.black,
+                                            ),
+                                            child: const Text("Visit Website"),
+                                          )))
+                                ])))),
+                        Expanded(
+                            child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Card(
+                                    child: Column(children: <Widget>[
+                                  Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Text(querySnapshot.docs[0]
+                                          .get('tool7')
+                                          .toString())),
+                                  SizedBox(
+                                    height: 150,
+                                    child: Image.network(
+                                      "",
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  const Divider(
+                                    color: Color.fromARGB(37, 249, 250, 248),
+                                    indent: 30,
+                                    endIndent: 30,
+                                    thickness: 0.8,
+                                  ),
+                                  Padding(
+                                      padding: const EdgeInsets.only(
+                                        top: 4,
+                                        left: 10,
+                                        right: 10,
+                                      ),
+                                      child: SizedBox(
+                                          width: double.infinity,
+                                          child: RichText(
+                                              text: TextSpan(
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall,
+                                            text:
+                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                          )))),
+                                  Align(
+                                      alignment: Alignment.center,
+                                      child: Padding(
+                                          padding: const EdgeInsets.only(
+                                            top: 10,
+                                            bottom: 10,
+                                          ),
+                                          child: OutlinedButton(
+                                            onPressed: () async {
+                                              const link =
+                                                  "https://www.adventureai.gg/#benefits";
+                                              if (await canLaunch(link)) {
+                                                await launch(link);
+                                              } else {
+                                                throw 'Could not launch $link';
+                                              }
+                                            },
+                                            style: OutlinedButton.styleFrom(
+                                              backgroundColor:
+                                                  const Color.fromRGBO(
+                                                      240, 238, 237, 1),
+                                              foregroundColor: Colors.black,
+                                            ),
+                                            child: const Text("Visit Website"),
+                                          )))
+                                ])))),
+                        Expanded(
+                            child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Card(
+                                    child: Column(children: <Widget>[
+                                  Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Text(querySnapshot.docs[0]
+                                          .get('tool8')
+                                          .toString())),
+                                  SizedBox(
+                                    height: 150,
+                                    child: Image.network(
+                                      "",
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  const Divider(
+                                    color: Color.fromARGB(37, 249, 250, 248),
+                                    indent: 30,
+                                    endIndent: 30,
+                                    thickness: 0.8,
+                                  ),
+                                  Padding(
+                                      padding: const EdgeInsets.only(
+                                        top: 4,
+                                        left: 10,
+                                        right: 10,
+                                      ),
+                                      child: SizedBox(
+                                          width: double.infinity,
+                                          child: RichText(
+                                              text: TextSpan(
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall,
+                                            text:
+                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                          )))),
+                                  Align(
+                                      alignment: Alignment.center,
+                                      child: Padding(
+                                          padding: const EdgeInsets.only(
+                                            top: 10,
+                                            bottom: 10,
+                                          ),
+                                          child: OutlinedButton(
+                                            onPressed: () async {
+                                              const link =
+                                                  "https://www.midjourney.com/home/";
                                               if (await canLaunch(link)) {
                                                 await launch(link);
                                               } else {
