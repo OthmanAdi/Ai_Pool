@@ -25,16 +25,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          primarySwatch: Colors.deepPurple,
-          textTheme: const TextTheme(
-            bodySmall: TextStyle(
-              fontSize: 17,
-              color: Color.fromRGBO(240, 238, 237, 1),
+            useMaterial3: true,
+            brightness: Brightness.light,
+            primarySwatch: Colors.deepPurple,
+            textTheme: const TextTheme(
+              bodySmall: TextStyle(
+                fontSize: 15,
+                color: Color.fromRGBO(240, 238, 237, 1),
+              ),
             ),
-          ),
-        ),
+            iconTheme: IconThemeData(color: Colors.black)),
+        color: Colors.black,
         home: const Directionality(
           textDirection: TextDirection.ltr,
           child: MyHomePage(title: "AI Pool 🌊"),
@@ -58,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
         leading: const Align(
           alignment: Alignment.centerLeft,
         ),
-        backgroundColor: const Color.fromRGBO(100, 100, 200, 0.2),
+        backgroundColor: Color.fromARGB(51, 0, 0, 0),
         title: GestureDetector(
           child: Text(widget.title),
           onTap: () => Navigator.pop(context), //Go back home on Tap

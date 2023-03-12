@@ -44,7 +44,6 @@ class _AiAppsRowsState extends State<AiAppsRows> {
     _dBRef.get(); //cant listen to update and return future
     _dBRef.snapshots(); //can listen to updates and return a stream
 
-    CollectionReference ref = FirebaseFirestore.instance.collection('ai_apps');
 
     return Scaffold(
       body: SingleChildScrollView(
