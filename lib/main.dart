@@ -34,16 +34,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-            useMaterial3: true,
-            brightness: Brightness.dark,
-            textTheme: const TextTheme(
-              bodySmall: TextStyle(
-                fontSize: 15,
-                color: Color.fromRGBO(240, 238, 237, 1),
-              ),
-            ),
-            iconTheme: IconThemeData(color: Colors.black)),
-        color: Colors.black,
+          useMaterial3: true,
+        ),
         home: const Directionality(
           textDirection: TextDirection.ltr,
           child: MyHomePage(title: "AI Pool 🌊"),
@@ -64,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(51, 0, 0, 0),
+        backgroundColor: Color.fromARGB(255, 230, 230, 230),
         title: GestureDetector(
           child: Text(widget.title),
           onTap: () => window.location.reload(), //Reload page when tapped
