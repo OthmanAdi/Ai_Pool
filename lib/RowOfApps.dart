@@ -51,7 +51,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
         body: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            color: Color.fromARGB(195, 0, 0, 0), //! Main BG Colors
+            color: const Color.fromARGB(195, 0, 0, 0), //! Main BG Colors
             child: SingleChildScrollView(
                 child: Column(children: [
               Padding(
@@ -86,10 +86,6 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                     if (snapshot.hasError == true) {
                       return Center(child: Text(snapshot.error.toString()));
                     }
-                    // if (snapshot.connectionState == ConnectionState.active) {
-                    //   QuerySnapshot querySnapshot = snapshot.data;
-                    //   return Text(querySnapshot.docs.first.data().toString());
-                    // }
                     if (snapshot.connectionState == ConnectionState.active) {
                       QuerySnapshot querySnapshot = snapshot.data;
                       return Column(
@@ -110,7 +106,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/chat.png"),
+                                                "../assets/thumbnails/chat.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -134,8 +130,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('chatgptDescription')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -180,7 +177,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/CoPilot.png"),
+                                                "../assets/thumbnails/CoPilot.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -204,8 +201,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('copilot')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -249,7 +247,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/Lensa.png"),
+                                                "../assets/thumbnails/Lensa.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -273,8 +271,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('Lensa')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -318,7 +317,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/Dale2.png"),
+                                                "../assets/thumbnails/Dale2.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -342,8 +341,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('Dale')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -389,7 +389,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/LearnML.png"),
+                                                "../assets/thumbnails/LearnML.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -413,8 +413,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('MLLEARN')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -458,7 +459,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/bestAiPromptes.png"),
+                                                "../assets/thumbnails/bestAiPromptes.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -482,8 +483,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('PromptPal')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -527,7 +529,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/Fliki.png"),
+                                                "../assets/thumbnails/Fliki.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -551,8 +553,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('FlikiDescription')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -596,7 +599,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/CreatorHub.png"),
+                                                "../assets/thumbnails/CreatorHub.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -620,8 +623,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('Kjabi')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -667,7 +671,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/Krisp.png"),
+                                                "../assets/thumbnails/Krisp.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -691,8 +695,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('Krisp')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -736,7 +741,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/Ocoya.png"),
+                                                "../assets/thumbnails/Ocoya.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -760,8 +765,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('Ocoya')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -805,7 +811,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/CopyAi.png"),
+                                                "../assets/thumbnails/CopyAi.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -829,8 +835,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('Copy')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -874,7 +881,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/Beatoven.png"),
+                                                "../assets/thumbnails/Beatoven.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -898,8 +905,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('Beatover')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -945,7 +953,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/GptZero.png"),
+                                                "../assets/thumbnails/GptZero.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -969,8 +977,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('GptZero')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -1014,7 +1023,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/OutPutDetector.png"),
+                                                "../assets/thumbnails/OutPutDetector.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -1038,8 +1047,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('Detector')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -1083,7 +1093,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/AdventureAI.png"),
+                                                "../assets/thumbnails/AdventureAI.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -1107,8 +1117,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('Adventure')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -1152,7 +1163,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/MidJourney.png"),
+                                                "../assets/thumbnails/MidJourney.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -1176,8 +1187,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('MidJourney')
+                                                      .toString(),
                                                 )))),
                                         Align(
                                             alignment: Alignment.center,
@@ -1208,9 +1220,11 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                 )))
                                       ]))))
                             ]),
-                            Row(children: <Widget>[
-                              Expanded(
-                                  child: Padding(
+                            Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Padding(
                                       padding: const EdgeInsets.all(10.0),
                                       child: Card(
                                           child: Column(children: <Widget>[
@@ -1223,7 +1237,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           height: 150,
                                           child: Image(
                                             image: AssetImage(
-                                                "../asset/thumbnails/Civitai.png"),
+                                                "../assets/thumbnails/Civitai.png"),
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -1248,8 +1262,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .bodySmall,
-                                                  text:
-                                                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                                                  text: querySnapshot.docs[1]
+                                                      .get('Civit')
+                                                      .toString(),
                                                 ))))),
                                         Align(
                                             alignment: Alignment.center,
@@ -1278,8 +1293,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   ),
                                                   child: const Text("أستكشاف"),
                                                 )))
-                                      ])))),
-                            ])
+                                      ]))),
+                                ])
                           ]);
                     }
                     return const Center(child: CircularProgressIndicator());
