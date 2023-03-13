@@ -104,7 +104,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/chat.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -169,7 +170,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/CoPilot.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -234,7 +236,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/Lensa.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -299,7 +302,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/Dale2.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -366,7 +370,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/LearnML.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -431,7 +436,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/bestAiPromptes.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -496,7 +502,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/Fliki.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -561,7 +568,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/CreatorHub.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -628,7 +636,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/Krisp.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -692,7 +701,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/Ocoya.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -757,7 +767,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/CopyAi.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -821,7 +832,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/Beatoven.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -888,7 +900,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/GptZero.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -952,7 +965,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/OutPutDetector.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -1017,7 +1031,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/AdventureAI.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -1082,7 +1097,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/MidJourney.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -1149,7 +1165,8 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 const SizedBox(
                                   height: 150,
                                   child: Image(
-                                    image: AssetImage("../asset/"),
+                                    image: AssetImage(
+                                        "../asset/thumbnails/Civitai.png"),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
