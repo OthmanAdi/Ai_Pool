@@ -19,13 +19,21 @@ class RowOfApps extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: AiAppsRows(),
+      theme: ThemeData(
+        cardTheme: const CardTheme(color: Color.fromARGB(236, 242, 255, 255)),
+        useMaterial3: true,
+      ),
+      home: Directionality(
+        textDirection: TextDirection.rtl,
+        child: AiAppsRows(),
+      ),
     );
   }
 }
 
 class AiAppsRows extends StatefulWidget {
   @override
+  // ignore: library_private_types_in_public_api
   _AiAppsRowsState createState() => _AiAppsRowsState();
 }
 
@@ -62,7 +70,9 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                   bottom: MediaQuery.of(context).size.height * 0.04,
                 ),
                 child: Container(
-                  color: Colors.white70,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Color.fromRGBO(65, 53, 67, 1)),
                   width: MediaQuery.of(context).size.width,
                   alignment: Alignment.center,
                   child: Text.rich(
@@ -72,7 +82,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                       text:
                           "أنضم للأنترنت الجديد, و أضف أدوات لعملك و هواياتك لحياه أسلس من لائحه الأدوات",
                       style: TextStyle(
-                        color: Color.fromRGBO(70, 69, 69, 1),
+                        color: Color.fromRGBO(246, 241, 241, 1),
                         // letterSpacing: 8,
                         fontSize: 45,
                       ),
@@ -93,1132 +103,1485 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                           children: [
                             Row(children: <Widget>[
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('Chatgpt')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/chat.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('chatgptDescription')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const gptLink =
-                                                        "https://openai.com/";
-                                                    if (await canLaunch(
-                                                        gptLink)) {
-                                                      await launch(gptLink);
-                                                    } else {
-                                                      throw 'Could not launch $gptLink';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('Chatgpt')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/chat.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get(
+                                                                  'chatgptDescription')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const gptLink =
+                                                                "https://openai.com/";
+                                                            if (await canLaunch(
+                                                                gptLink)) {
+                                                              await launch(
+                                                                  gptLink);
+                                                            } else {
+                                                              throw 'Could not launch $gptLink';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('CoPilot')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/CoPilot.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('copilot')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://github.com/features/copilot";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('CoPilot')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/CoPilot.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('copilot')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://github.com/features/copilot";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('Lensa')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/Lensa.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('Lensa')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://prisma-ai.com/lensa";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('Lensa')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/Lensa.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('Lensa')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://prisma-ai.com/lensa";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('Dale2')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/Dale2.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('Dale')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://openai.com/product/dall-e-2";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('Dale2')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/Dale2.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('Dale')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://openai.com/product/dall-e-2";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                             ]),
                             Row(children: <Widget>[
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('kdnuggets')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/LearnML.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('MLLEARN')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://www.kdnuggets.com/2023/01/learn-machine-learning-github-repositories.html";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('kdnuggets')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/bestAiPromptes.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('MLLearn')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://www.promptpal.net/?ref=aitools.fyi";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('promptpal')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/bestAiPromptes.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('PromptPal')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://www.promptpal.net/?ref=aitools.fyi";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('promptpal')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/bestAiPromptes.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('PromptPal')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://www.promptpal.net/?ref=aitools.fyi";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('fliki')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/Fliki.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('FlikiDescription')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://fliki.ai/?via=aitools-fyi";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('fliki')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/Fliki.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get(
+                                                                  'FlikiDescription')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://fliki.ai/?via=aitools-fyi";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('kajabi')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/CreatorHub.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('Kjabi')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://kajabi.com/aicreatorhub";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('kajabi')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/CreatorHub.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ]))))
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('Kjabi')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://kajabi.com/aicreatorhub";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ])))))
                             ]),
                             Row(children: <Widget>[
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('krisp')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/Krisp.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('Krisp')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://krisp.ai/";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('krisp')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/Krisp.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('Krisp')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://krisp.ai/";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('ocoya')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/Ocoya.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('Ocoya')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://www.ocoya.com/";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('ocoya')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/bestAiPromptes.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('Ocoya')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://www.promptpal.net/?ref=aitools.fyi";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('copy')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/CopyAi.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('Copy')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://www.copy.ai/";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('copy')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/CopyAi.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('Copy')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://www.copy.ai/";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('beatoven')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/Beatoven.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('Beatover')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://www.beatoven.ai/";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('beatoven')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/Beatoven.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ]))))
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('Beatover')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://www.beatoven.ai/";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ])))))
                             ]),
                             Row(children: <Widget>[
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('gptzero')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/GptZero.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('GptZero')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://gptzero.me/";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('gptzero')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/GptZero.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('GptZero')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://gptzero.me/";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('OpenAiDetector')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/OutPutDetector.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('Detector')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://openai-openai-detector.hf.space/";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('OpenAiDetector')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/OutPutDetector.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('Detector')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://openai-openai-detector.hf.space/";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('adventureai')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/AdventureAI.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('Adventure')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://www.adventureai.gg/#benefits";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('adventureai')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/AdventureAI.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ])))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('Adventure')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://www.adventureai.gg/#benefits";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))),
                               Expanded(
-                                  child: Padding(
-                                      padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('midjourney')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/MidJourney.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Padding(
-                                            padding: const EdgeInsets.only(
-                                              top: 4,
-                                              left: 10,
-                                              right: 10,
-                                            ),
-                                            child: SizedBox(
-                                                width: double.infinity,
-                                                child: RichText(
-                                                    text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('MidJourney')
-                                                      .toString(),
-                                                )))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://www.midjourney.com/home/";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                  // create flex property for the Expanded class
+                                  child: Align(
+                                      alignment: Alignment.topCenter,
+                                      child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('midjourney')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/MidJourney.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ]))))
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                      top: 4,
+                                                      left: 10,
+                                                      right: 10,
+                                                    ),
+                                                    child: SizedBox(
+                                                        width: double.infinity,
+                                                        child: RichText(
+                                                            text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('MidJourney')
+                                                              .toString(),
+                                                        )))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://www.midjourney.com/home/";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ])))))
                             ]),
                             Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -1226,74 +1589,99 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                 children: <Widget>[
                                   Padding(
                                       padding: const EdgeInsets.all(10.0),
-                                      child: Card(
-                                          child: Column(children: <Widget>[
-                                        Padding(
-                                            padding: const EdgeInsets.all(10.0),
-                                            child: Text(querySnapshot.docs[0]
-                                                .get('civitai')
-                                                .toString())),
-                                        const SizedBox(
-                                          height: 150,
-                                          child: Image(
-                                            image: AssetImage(
-                                                "../assets/thumbnails/Civitai.png"),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                        const Divider(
-                                          color:
-                                              Color.fromARGB(37, 249, 250, 248),
-                                          indent: 30,
-                                          endIndent: 30,
-                                          thickness: 0.8,
-                                        ),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 4,
-                                                  left: 10,
-                                                  right: 10,
-                                                ),
-                                                child: SizedBox(
-                                                    child: RichText(
-                                                        text: TextSpan(
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall,
-                                                  text: querySnapshot.docs[1]
-                                                      .get('Civit')
-                                                      .toString(),
-                                                ))))),
-                                        Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 10,
-                                                  bottom: 10,
-                                                ),
-                                                child: OutlinedButton(
-                                                  onPressed: () async {
-                                                    const link =
-                                                        "https://civitai.com/";
-                                                    if (await canLaunch(link)) {
-                                                      await launch(link);
-                                                    } else {
-                                                      throw 'Could not launch $link';
-                                                    }
-                                                  },
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            240, 238, 237, 1),
-                                                    foregroundColor:
-                                                        Colors.black,
+                                      child: Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.2,
+                                          child: Card(
+                                              shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10)),
+                                              child: Column(children: <Widget>[
+                                                Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Text(querySnapshot
+                                                        .docs[0]
+                                                        .get('civitai')
+                                                        .toString())),
+                                                const SizedBox(
+                                                  height: 150,
+                                                  child: Image(
+                                                    image: AssetImage(
+                                                        "../assets/thumbnails/Civitai.png"),
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  child: const Text("أستكشاف"),
-                                                )))
-                                      ]))),
+                                                ),
+                                                const Divider(
+                                                  color: Color.fromARGB(
+                                                      246, 241, 241, 250),
+                                                  indent: 30,
+                                                  endIndent: 30,
+                                                  thickness: 0.8,
+                                                ),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 4,
+                                                          left: 10,
+                                                          right: 10,
+                                                        ),
+                                                        child: SizedBox(
+                                                            child: RichText(
+                                                                text: TextSpan(
+                                                          style:
+                                                              Theme.of(context)
+                                                                  .textTheme
+                                                                  .bodySmall,
+                                                          text: querySnapshot
+                                                              .docs[1]
+                                                              .get('Civit')
+                                                              .toString(),
+                                                        ))))),
+                                                Align(
+                                                    alignment: Alignment.center,
+                                                    child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .only(
+                                                          top: 10,
+                                                          bottom: 10,
+                                                        ),
+                                                        child: OutlinedButton(
+                                                          onPressed: () async {
+                                                            const link =
+                                                                "https://civitai.com/";
+                                                            if (await canLaunch(
+                                                                link)) {
+                                                              await launch(
+                                                                  link);
+                                                            } else {
+                                                              throw 'Could not launch $link';
+                                                            }
+                                                          },
+                                                          style: OutlinedButton
+                                                              .styleFrom(
+                                                            backgroundColor:
+                                                                const Color
+                                                                        .fromRGBO(
+                                                                    240,
+                                                                    238,
+                                                                    237,
+                                                                    1),
+                                                            foregroundColor:
+                                                                Colors.black,
+                                                          ),
+                                                          child: const Text(
+                                                              "أستكشاف"),
+                                                        )))
+                                              ]))))
                                 ])
                           ]);
                     }
@@ -1310,7 +1698,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                           Container(
                               height: MediaQuery.of(context).size.height * 0.1,
                               width: double.infinity,
-                              color: Colors.blue,
+                              color: const Color.fromARGB(246, 241, 241, 250),
                               child: Padding(
                                   padding: EdgeInsets.only(
                                       bottom:

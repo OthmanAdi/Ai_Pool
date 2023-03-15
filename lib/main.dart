@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         home: const Directionality(
-          textDirection: TextDirection.ltr,
+          textDirection: TextDirection.rtl,
           child: MyHomePage(title: "AI Pool 🌊"),
         ));
   }
