@@ -151,7 +151,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get(
@@ -244,7 +244,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('copilot')
@@ -336,7 +336,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('Lensa')
@@ -428,7 +428,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('Dale')
@@ -497,7 +497,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   height: 150,
                                                   child: Image(
                                                     image: AssetImage(
-                                                        "../assets/thumbnails/bestAiPromptes.png"),
+                                                        "../assets/thumbnails/LearnML.png"),
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
@@ -522,7 +522,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('MLLearn')
@@ -614,7 +614,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('PromptPal')
@@ -706,7 +706,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get(
@@ -799,7 +799,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('Kjabi')
@@ -893,7 +893,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('Krisp')
@@ -960,7 +960,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   height: 150,
                                                   child: Image(
                                                     image: AssetImage(
-                                                        "../assets/thumbnails/bestAiPromptes.png"),
+                                                        "../assets/thumbnails/Ocoya.png"),
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
@@ -985,7 +985,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('Ocoya')
@@ -1077,7 +1077,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('Copy')
@@ -1169,7 +1169,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('Beatover')
@@ -1263,7 +1263,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('GptZero')
@@ -1355,7 +1355,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('Detector')
@@ -1447,7 +1447,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('Adventure')
@@ -1539,7 +1539,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('MidJourney')
@@ -1639,7 +1639,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                           style:
                                                               Theme.of(context)
                                                                   .textTheme
-                                                                  .bodySmall,
+                                                                  .bodyMedium,
                                                           text: querySnapshot
                                                               .docs[1]
                                                               .get('Civit')
@@ -1711,6 +1711,15 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                           MainAxisAlignment.spaceEvenly,
                                       children: <Widget>[
                                         Row(children: [
+                                          Text(
+                                            "اللائحه صنعت من: عثمان عدي بمساعده",
+                                            style: TextStyle(
+                                              fontSize: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.02,
+                                            ),
+                                          ),
                                           IconButton(
                                               tooltip: "Flutter",
                                               hoverColor:
@@ -1724,16 +1733,7 @@ class _AiAppsRowsState extends State<AiAppsRows> {
                                                   Colors.deepOrangeAccent,
                                               onPressed: () {},
                                               icon: const Icon(
-                                                  DevIcons.firebasePlain)),
-                                          Text(
-                                            "اللائحه صنعت من: عثمان عدي بمساعده",
-                                            style: TextStyle(
-                                              fontSize: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.02,
-                                            ),
-                                          ),
+                                                  DevIcons.firebasePlain))
                                         ]),
                                         SizedBox(
                                           width: MediaQuery.of(context)
